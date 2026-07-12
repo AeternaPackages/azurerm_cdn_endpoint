@@ -1,4 +1,9 @@
 # --- azurerm_cdn_endpoint ---
+output "cdn_endpoints_id" {
+  description = "Map of id values across all cdn_endpoints, keyed the same as var.cdn_endpoints"
+  value       = module.cdn_endpoints.cdn_endpoints_id
+}
+
 output "cdn_endpoints_content_types_to_compress" {
   description = "Map of content_types_to_compress values across all cdn_endpoints, keyed the same as var.cdn_endpoints"
   value       = module.cdn_endpoints.cdn_endpoints_content_types_to_compress
@@ -95,6 +100,11 @@ output "cdn_endpoints_tags" {
 }
 
 # --- azurerm_cdn_endpoint_custom_domain ---
+output "cdn_endpoint_custom_domains_id" {
+  description = "Map of id values across all cdn_endpoint_custom_domains, keyed the same as var.cdn_endpoint_custom_domains"
+  value       = module.cdn_endpoint_custom_domains.cdn_endpoint_custom_domains_id
+}
+
 output "cdn_endpoint_custom_domains_cdn_endpoint_id" {
   description = "Map of cdn_endpoint_id values across all cdn_endpoint_custom_domains, keyed the same as var.cdn_endpoint_custom_domains"
   value       = module.cdn_endpoint_custom_domains.cdn_endpoint_custom_domains_cdn_endpoint_id
