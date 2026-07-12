@@ -5,7 +5,7 @@ locals {
     for k1, v1 in var.cdn_endpoints : {
       for k2, v2 in coalesce(v1.cdn_endpoint_custom_domains, {}) :
       "${k1}/${k2}" => merge(v2, {
-        cdn_endpoint_id = module.cdn_endpoints.cdn_endpoints["${k1}"].id
+        cdn_endpoint_id = module.cdn_endpoints.cdn_endpoints_id["${k1}"]
       })
     }
   ]...)
