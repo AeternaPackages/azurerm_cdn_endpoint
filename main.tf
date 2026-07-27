@@ -12,12 +12,12 @@ locals {
 }
 
 module "cdn_endpoints" {
-  source        = "git::https://github.com/AeternaModules/azurerm_cdn_endpoint.git?ref=v4.80.0"
+  source        = "git::https://github.com/AeternaModules/azurerm_cdn_endpoint.git?ref=v4.81.0"
   cdn_endpoints = local.cdn_endpoints
 }
 
 module "cdn_endpoint_custom_domains" {
-  source                      = "git::https://github.com/AeternaModules/azurerm_cdn_endpoint_custom_domain.git?ref=v4.80.0"
+  source                      = "git::https://github.com/AeternaModules/azurerm_cdn_endpoint_custom_domain.git?ref=v4.81.0"
   cdn_endpoint_custom_domains = local.cdn_endpoint_custom_domains
   depends_on                  = [module.cdn_endpoints]
 }
